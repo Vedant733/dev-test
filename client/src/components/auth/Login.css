@@ -1,0 +1,11 @@
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+[class^="login_form_"] {
+  margin: 1em;
+  padding: 0.5em;
+  width: 32vw;
+  font-size: 1.4em;
+}

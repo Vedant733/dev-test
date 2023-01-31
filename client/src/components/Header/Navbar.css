@@ -1,0 +1,125 @@
+.checkbox {
+  display: none;
+}
+.nav-button {
+  background-color: white;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 4rem;
+  right: 4.5rem;
+  z-index: 2000;
+  text-align: center;
+}
+.nav-background {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 4rem;
+  right: 4.5rem;
+  z-index: 1000;
+  transition: transform 0.9s;
+  background-image: radial-gradient(#404142ef, #000005ea);
+}
+.navbar {
+  list-style: none;
+  z-index: 1500;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.navbar .nav-list {
+  transition: all 1s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar .nav-list .nav-list-element {
+  list-style: none;
+  text-align: center;
+}
+.navbar .nav-list .nav-list-element .nav-list-link {
+  display: none;
+  padding: 1rem 2rem;
+  margin: -2rem;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: all 1s;
+  transition-delay: 10ms;
+  opacity: 0;
+  background-image: linear-gradient(120deg, #6983f7 50%, white 50%);
+  background-size: 240%;
+  color: white;
+}
+.checkbox:checked ~ .navbar .nav-list .nav-list-element .nav-list-link {
+  display: inline-block;
+  opacity: 1;
+  margin: 1rem;
+}
+.navbar .nav-list .nav-list-element .nav-list-link:hover,
+.navbar .nav-list .nav-list-element .nav-list-link:active {
+  background-position: 100%;
+  color: blue;
+  transform: translateX(2rem);
+  box-shadow: 0 0.2em 10px rgba(0, 0, 0, 0.527);
+}
+.checkbox:checked ~ .nav-background {
+  transform: scale(99);
+}
+.checkbox:checked ~ .navbar {
+  width: 100%;
+  opacity: 1;
+}
+.nav-icon {
+  position: relative;
+  margin-top: 2rem;
+}
+.nav-icon,
+.nav-icon::after,
+.nav-icon::before {
+  width: 2rem;
+  height: 2px;
+  background-color: black;
+  display: inline-block;
+}
+.nav-icon::after,
+.nav-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.nav-icon::before {
+  top: -0.6rem;
+}
+.nav-icon::after {
+  top: 0.6rem;
+}
+.nav-button:hover .nav-icon::before {
+  top: -0.8rem;
+}
+.nav-button:hover .nav-icon::after {
+  top: 0.8rem;
+}
+.checkbox:checked + .nav-button .nav-icon {
+  background-color: transparent;
+}
+.checkbox:checked + .nav-button .nav-icon::before {
+  transform: rotate(135deg);
+  top: 0rem;
+}
+.checkbox:checked + .nav-button .nav-icon::after {
+  transform: rotate(-135deg);
+  top: 0rem;
+}
+.navbar .nav-list-element .nav-list-link:visited + .nav-background {
+  background-color: red;
+  z-index: 100000;
+}

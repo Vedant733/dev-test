@@ -1,0 +1,17 @@
+.sidebar {
+  bottom: 0;
+  right: 0;
+  display: flex;
+  position: fixed;
+  height: 70px;
+  width: 100vw;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1000;
+  /* background-image: linear-gradient(to bottom,yellow,red); */
+}
+.sidebar span {
+  margin-bottom: 50%;
+}

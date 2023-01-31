@@ -1,0 +1,11 @@
+.createProfile_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+[class^="createProfile_"] {
+  margin: 1em;
+  padding: 0.5em;
+  width: 30vw;
+  font-size: 1.2em;
+}
